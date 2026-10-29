@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đỏ Lửa · Bún Ban Mê</title>
+<meta name="description" content="Đỏ Lửa – Bún phố núi Ban Mê. Đặc sản bún đỏ Buôn Ma Thuột, bún riêu, bún bò, bún giò, bún mắm, bún cá.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+
+<!-- ========== LOADER: màn nhung mở như rạp phim ========== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+  <div class="loader-inner">
+    <svg class="flame big" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg>
+    <div class="loader-name">ĐỎ LỬA</div>
+    <div class="loader-sub">Bún phố núi Ban Mê</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
+</div>
+
+<div class="cursor-glow" id="glow"></div>
+
+<!-- ========== HEADER ========== -->
+<header class="topbar" id="topbar">
+  <a class="brand" href="#top" aria-label="Đỏ Lửa – về đầu trang">
+    <svg class="flame" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg>
+    <span><b>ĐỎ LỬA</b><small>BÚN BAN MÊ</small></span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#menu">Thực đơn</a>
+    <a href="#" data-open-book>Sách món</a>
+    <a href="#drinks">Thức uống</a>
+    <a href="#extras">Ăn thêm · Ăn kèm</a>
+    <a href="#checkout">Đặt món</a>
+  </nav>
+  <button class="cart-btn" id="cartBtn" aria-label="Xem món đã chọn">
+    <svg viewBox="0 0 24 24"><path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/></svg>
+    <span class="badge" id="cartBadge">0</span>
+  </button>
+  <button class="burger" id="burger" aria-label="Mở menu"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <!-- ========== HERO SLIDER ========== -->
+  <section class="hero" id="hero">
+    <canvas id="embers"></canvas>
+    <div class="hero-glow"></div>
+
+    <article class="slide is-active">
+      <div class="slide-copy">
+        <span class="eyebrow"><i></i>Đặc sản Buôn Ma Thuột</span>
+        <h1>Bún <em>Đỏ</em><br>Ban Mê</h1>
+        <p class="slogan">“Đỏ từ sợi bún – Đậm tình cao nguyên”</p>
+        <p class="lead">Sợi bún nhuộm đỏ hạt điều, nước dùng cua đồng ngọt lịm, chả cua chiên vàng — tô bún làm nên tên gọi Đỏ Lửa.</p>
+        <div class="cta">
+          <button class="btn btn-red" data-open-book="0">Lật sách món <span>📖</span></button>
+          <button class="btn btn-ghost" data-quick-add="bun-do">+ Đặt một tô</button>
+        </div>
+      </div>
+      <div class="slide-visual" id="heroBowl"></div>
+    </article>
+
+    <article class="slide">
+      <div class="slide-copy">
+        <span class="eyebrow"><i></i>Thực đơn 6 tô bún</span>
+        <h1>Sáu tô bún<br><em>một</em> bếp lửa</h1>
+        <p class="lead">Riêu cua, bò Huế, giò heo, mắm miền Tây, cá nghệ — và tô bún đỏ trứ danh phố núi.</p>
+        <div class="cta">
+          <a class="btn btn-red" href="#menu">Xem thực đơn</a>
+          <button class="btn btn-ghost" data-open-book>Lật sách món</button>
+        </div>
+      </div>
+      <div class="slide-visual trio" id="heroTrio"></div>
+    </article>
+
+    <article class="slide">
+      <div class="slide-copy">
+        <span class="eyebrow"><i></i>Thức uống phố núi</span>
+        <h1>Cà phê<br><em>Ban Mê</em></h1>
+        <p class="lead">Robusta đậm đặc cao nguyên, sinh tố bơ Đắk Lắk, trà atiso đỏ — 12 thức uống giải nhiệt cho tô bún cay.</p>
+        <div class="cta">
+          <a class="btn btn-red" href="#drinks">Chọn thức uống</a>
+        </div>
+      </div>
+      <div class="slide-visual" id="heroGlass"></div>
+    </article>
+
+    <div class="hero-dots" id="heroDots"></div>
+    <a class="scroll-hint" href="#menu"><span></span>Cuộn xuống</a>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Bún Đỏ Ban Mê</span><b>✦</b><span>Bún Riêu Cua</span><b>✦</b><span>Bún Bò Huế</span><b>✦</b><span>Bún Giò Heo</span><b>✦</b><span>Bún Mắm</span><b>✦</b><span>Bún Cá</span><b>✦</b>
+      <span>Bún Đỏ Ban Mê</span><b>✦</b><span>Bún Riêu Cua</span><b>✦</b><span>Bún Bò Huế</span><b>✦</b><span>Bún Giò Heo</span><b>✦</b><span>Bún Mắm</span><b>✦</b><span>Bún Cá</span><b>✦</b>
+    </div>
+  </div>
+
+  <!-- ========== STEP 1: MÓN NƯỚC ========== -->
+  <section class="section" id="menu">
+    <div class="sec-head reveal">
+      <span class="step-no">01</span>
+      <div>
+        <span class="eyebrow"><i></i>Bước 1 · Chọn bún</span>
+        <h2>Món <em>Nước</em></h2>
+        <p>Bấm <b class="pill">+</b> để thêm, <b class="pill">−</b> để bớt. Muốn biết chuyện từng tô? Lật sách món.</p>
+      </div>
+    </div>
+    <div class="dish-grid" id="dishGrid"></div>
+  </section>
+
+  <!-- ========== BOOK CTA ========== -->
+  <section class="book-cta reveal">
+    <div class="closed-book" data-open-book role="button" tabindex="0" aria-label="Mở sách món">
+      <div class="cb-pages"></div>
+      <div class="cb-cover">
+        <svg class="flame" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg>
+        <b>ĐỎ LỬA</b><small>Thực Đơn</small>
+      </div>
+    </div>
+    <div class="book-cta-copy">
+      <span class="eyebrow"><i></i>Sách món 4D</span>
+      <h2>Lật từng trang,<br><em>tách từng lớp</em></h2>
+      <p>Mỗi tô bún là một trang sách: câu chuyện, hương vị, và ảnh 4D — nguyên liệu bung ra quanh tô, rồi lần lượt quay về, nước dùng rót đầy lóng lánh.</p>
+      <button class="btn btn-red" data-open-book>Mở sách món <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ========== STEP 2: THỨC UỐNG ========== -->
+  <section class="section" id="drinks">
+    <div class="sec-head reveal">
+      <span class="step-no">02</span>
+      <div>
+        <span class="eyebrow"><i></i>Bước 2 · Thức uống</span>
+        <h2>Uống gì <em>cho mát</em>?</h2>
+        <p>12 thức uống đi cùng tô bún — từ ly trà đá quen thuộc đến cà phê, sinh tố bơ chuẩn Ban Mê.</p>
+      </div>
+    </div>
+    <div class="drink-grid" id="drinkGrid"></div>
+  </section>
+
+  <!-- ========== STEP 3: ĂN THÊM / ĂN KÈM ========== -->
+  <section class="section" id="extras">
+    <div class="sec-head reveal">
+      <span class="step-no">03</span>
+      <div>
+        <span class="eyebrow"><i></i>Bước 3 · Món đã chọn</span>
+        <h2>Ăn thêm <em>&amp;</em> Ăn kèm</h2>
+        <p>Thêm topping cho từng tô bạn đã chọn, và gọi vài món ăn kèm cho đủ vị.</p>
+      </div>
+    </div>
+    <div class="sel-list" id="selectedList"></div>
+
+    <h3 class="sub-title reveal"><span>Món ăn kèm</span></h3>
+    <div class="side-grid" id="sideGrid"></div>
+  </section>
+
+  <!-- ========== STEP 4: XÁC NHẬN ========== -->
+  <section class="section" id="checkout">
+    <div class="sec-head reveal">
+      <span class="step-no">04</span>
+      <div>
+        <span class="eyebrow"><i></i>Bước 4 · Xác nhận</span>
+        <h2>Vé <em>thưởng thức</em></h2>
+        <p>Kiểm tra lại order và để lại thông tin — bếp sẽ đỏ lửa ngay.</p>
+      </div>
+    </div>
+    <div class="checkout-wrap">
+      <form class="order-form reveal" id="orderForm" novalidate>
+        <div class="seg" role="radiogroup" aria-label="Hình thức">
+          <label><input type="radio" name="mode" value="dine" checked><span>🍜 Ăn tại quán</span></label>
+          <label><input type="radio" name="mode" value="take"><span>🥡 Mang về</span></label>
+          <label><input type="radio" name="mode" value="ship"><span>🛵 Giao tận nơi</span></label>
+        </div>
+        <div class="field"><input id="fName" name="name" placeholder=" " autocomplete="name"><label for="fName">Họ và tên</label></div>
+        <div class="field"><input id="fPhone" name="phone" placeholder=" " inputmode="tel" autocomplete="tel"><label for="fPhone">Số điện thoại</label></div>
+        <div class="field" data-for="dine"><input id="fTable" name="table" placeholder=" " inputmode="numeric"><label for="fTable">Số bàn (nếu có)</label></div>
+        <div class="field hidden" data-for="ship"><input id="fAddr" name="addr" placeholder=" " autocomplete="street-address"><label for="fAddr">Địa chỉ giao hàng</label></div>
+        <div class="field"><textarea id="fNote" name="note" placeholder=" " rows="2"></textarea><label for="fNote">Ghi chú cho bếp (ít cay, không hành…)</label></div>
+        <p class="form-err" id="formErr" role="alert"></p>
+        <button class="btn btn-red btn-block" type="submit">Xác nhận đặt món <span>🔥</span></button>
+      </form>
+
+      <div class="ticket reveal" id="ticket">
+        <div class="ticket-top">
+          <div class="brand mini"><svg class="flame" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg><span><b>ĐỎ LỬA</b><small>VÉ THƯỞNG THỨC</small></span></div>
+        </div>
+        <div class="ticket-body" id="ticketBody"></div>
+        <div class="ticket-cut"></div>
+        <div class="ticket-foot">
+          <span>Tổng cộng</span><b id="ticketTotal">0đ</b>
+        </div>
+        <div class="barcode"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="foot-brand">
+      <a class="brand" href="#top"><svg class="flame" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg><span><b>ĐỎ LỬA</b><small>BÚN BAN MÊ</small></span></a>
+      <p class="slogan">“Đỏ từ sợi bún – Đậm tình cao nguyên”</p>
+    </div>
+    <div><h5>Giờ mở cửa</h5><p>Mỗi ngày · 15:00 – 22:00<br>Bún đỏ ngon nhất lúc chiều tà</p></div>
+    <div><h5>Địa chỉ</h5><p>[Địa chỉ quán]<br>Buôn Ma Thuột, Đắk Lắk</p></div>
+    <div><h5>Hotline</h5><p>09xx xxx xxx<br>Đặt bàn · Giao tận nơi</p></div>
+    <small class="copy">© 2026 Đỏ Lửa · Bún phố núi Ban Mê</small>
+  </footer>
+</main>
+
+<!-- ========== FLIP BOOK ========== -->
+<div class="book-modal" id="bookModal" aria-hidden="true" role="dialog" aria-label="Sách món">
+  <button class="book-close" id="bookClose" aria-label="Đóng sách và sang thức uống">✕<span>Đóng · sang thức uống</span></button>
+  <button class="book-nav prev" id="bookPrev" aria-label="Trang trước">‹</button>
+  <div class="book-stage"><div class="book" id="book"></div></div>
+  <button class="book-nav next" id="bookNext" aria-label="Trang sau">›</button>
+  <div class="book-progress"><span id="bookPage">1</span><i><b id="bookBar"></b></i><em>← → để lật trang</em></div>
+</div>
+
+<!-- ========== LIQUID TRANSITION ========== -->
+<div class="liquid" id="liquid" aria-hidden="true">
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C180,110 360,10 540,60 C720,110 900,10 1080,60 C1260,110 1350,40 1440,60 L1440,120 L0,120 Z"/></svg>
+  <div class="liquid-body"><span>Mời bạn sang thức uống…</span></div>
+</div>
+
+<!-- ========== BOOKING BAR (kiểu CGV) ========== -->
+<div class="bookbar" id="bookbar">
+  <ol class="bb-steps" id="bbSteps">
+    <li data-step="menu"><b>1</b><span>Bún</span></li>
+    <li data-step="drinks"><b>2</b><span>Uống</span></li>
+    <li data-step="extras"><b>3</b><span>Thêm</span></li>
+    <li data-step="checkout"><b>4</b><span>Xác nhận</span></li>
+  </ol>
+  <div class="bb-items" id="bbItems"></div>
+  <div class="bb-total"><small>Tạm tính</small><b id="bbTotal">0đ</b></div>
+  <button class="btn btn-red" id="bbNext">Tiếp tục ›</button>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<!-- ========== SUCCESS ========== -->
+<div class="success" id="success" aria-hidden="true" role="dialog" aria-label="Đặt món thành công">
+  <div class="success-card">
+    <div class="success-flame"><svg class="flame big" viewBox="0 0 24 24"><path d="M12 1.5c1.2 4.3 5.6 6.4 5.6 11.8a5.6 5.6 0 0 1-11.2 0c0-2.3 1.1-3.9 2.3-5 0 2.2 1 3.4 2.3 3.4 0-3.4-1.3-6.6 1-10.2z"/></svg></div>
+    <h3>Bếp đã đỏ lửa!</h3>
+    <p id="successMsg"></p>
+    <div class="success-code" id="successCode"></div>
+    <button class="btn btn-red" id="successOk">Tuyệt vời</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

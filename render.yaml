@@ -1,0 +1,11 @@
+# Render Blueprint: deploy as a static site (no build step)
+services:
+  - type: web
+    name: do-lua-ban-me
+    runtime: static
+    buildCommand: echo "Static site, no build needed"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
